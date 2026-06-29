@@ -1,3 +1,6 @@
+import { updateWeatherUI } from './weatherDisplay.js';
+import { renderForecast } from './forecast.js';
+
 import {
     saveSetting,
     getSetting
@@ -16,18 +19,14 @@ export function initializeTemperatureSettings() {
 
     select.value = savedUnit;
 
-    select.addEventListener(
-        'change',
-        () => {
+    select.addEventListener('change', () => {
+        saveSetting('temperatureUnit', select.value);
 
-            saveSetting(
-                'temperatureUnit',
-                select.value
-            );
-
-            window.location.reload();
-
+        // If we have stored weather data, refresh the UI without reloading
+        if (window.__weatherData) {
+            updateWeatherUI(window.__weatherData.current);
+            renderForecast(window.__weatherData);
         }
-    );
+    });
 
 }

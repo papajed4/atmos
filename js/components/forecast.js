@@ -1,3 +1,5 @@
+import { formatTemperature } from '../utils/temperatureUtils.js';
+
 export function renderForecast(data) {
 
     const forecastList =
@@ -29,12 +31,12 @@ export function renderForecast(data) {
             );
 
         const max =
-            Math.round(
+            formatTemperature(
                 data.daily.temperature_2m_max[index]
             );
 
         const min =
-            Math.round(
+            formatTemperature(
                 data.daily.temperature_2m_min[index]
             );
 
@@ -70,13 +72,13 @@ function getForecastIcon(code) {
     if (code === 0)
         return 'ri-sun-line';
 
-    if ([1,2,3].includes(code))
+    if ([1, 2, 3].includes(code))
         return 'ri-cloudy-line';
 
-    if ([45,48].includes(code))
+    if ([45, 48].includes(code))
         return 'ri-mist-line';
 
-    if ([51,61,63,65,80].includes(code))
+    if ([51, 61, 63, 65, 80].includes(code))
         return 'ri-rainy-line';
 
     if (code === 95)

@@ -478,3 +478,34 @@ body.fullscreen-mode .top-bar {
     margin-bottom: 1rem;
 
 }
+
+body.morning-theme .quote,
+body.day-theme .quote {
+    color: rgba(0,0,0,.85);
+}
+
+/* ==========================================
+   LIGHT MODE TEMPERATURE
+========================================== */
+
+body.morning-theme .temperature,
+body.day-theme .temperature {
+    background: linear-gradient(
+        to bottom,
+        #1a1a1a 0%,
+        #444444 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+body.morning-theme .forecast-day,
+body.day-theme .forecast-day {
+    color: rgba(0,0,0,.5);
+}
+
+body.morning-theme .forecast-header h3,
+body.day-theme .forecast-header h3 {
+    color: rgba(0,0,0,.35);
+}

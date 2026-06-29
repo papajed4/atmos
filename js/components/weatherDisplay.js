@@ -1,32 +1,12 @@
-import {
-    getSetting
-} from '../services/storageService.js';
+import { formatTemperature } from '../utils/temperatureUtils.js';
+import { getSetting } from '../services/storageService.js';
+import { updateAmbientSound } from './ambientSound.js';
+
 
 export function updateWeatherUI(weather) {
 
-    const unit =
-        getSetting('temperatureUnit')
-        || 'celsius';
-
-    let temperature =
-        weather.temperature_2m;
-
-    if (unit === 'fahrenheit') {
-
-        temperature =
-            (temperature * 9 / 5) + 32;
-
-    }
-
-    const symbol =
-        unit === 'fahrenheit'
-            ? 'F'
-            : 'C';
-
-    document.getElementById(
-        'temperature'
-    ).textContent =
-        `${Math.round(temperature)}°${symbol}`;
+    document.getElementById('temperature').textContent =
+        formatTemperature(weather.temperature_2m);
 
     document.getElementById('humidity').textContent =
         `${weather.relative_humidity_2m}%`;
@@ -34,8 +14,9 @@ export function updateWeatherUI(weather) {
     document.getElementById('windSpeed').textContent =
         `${weather.wind_speed_10m} km/h`;
 
+    const uv = weather.uv_index;
     document.getElementById('uvIndex').textContent =
-        '--';
+        uv !== undefined && uv !== null ? Math.round(uv) : '--';
 
     const weatherInfo = getWeatherInfo(
         weather.weather_code
@@ -51,6 +32,9 @@ export function updateWeatherUI(weather) {
             weather.weather_code
         );
 
+        // ... after you've set the weather classes ...
+        updateAmbientSound(weather.weather_code);
+
     }
 
     document.getElementById('weatherCondition').textContent =
@@ -58,6 +42,8 @@ export function updateWeatherUI(weather) {
 
     document.getElementById('weatherIcon').className =
         weatherInfo.icon;
+
+
 
 }
 

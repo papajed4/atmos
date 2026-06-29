@@ -1,3 +1,5 @@
+import { renderFavorites } from './favorites.js';
+
 export function initializeSettingsPanel() {
 
     const settingsBtn =
@@ -14,6 +16,8 @@ export function initializeSettingsPanel() {
 
 
     function openPanel() {
+
+        renderFavorites();
 
         settingsPanel.classList.add('active');
 

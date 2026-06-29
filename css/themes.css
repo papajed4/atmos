@@ -14,48 +14,54 @@ body {
 
 
 /* ==========================================
-   MORNING THEME
+   MORNING THEME (Warm, Soft Light)
 ========================================== */
 
 body.morning-theme {
-
-    --bg-primary: #f7f7f7;
-
-    --clr-white: #121212;
-    --clr-gray-100: #1a1a1a;
-    --clr-gray-200: #2a2a2a;
-    --clr-gray-300: #444444;
-    --clr-gray-400: #666666;
-
-    --theme-bg-start: #fffdf7;
-    --theme-bg-end: #f4f4f4;
-
-    --theme-radial:
-        rgba(255, 225, 170, .25);
-
+    --bg-primary: #faf8f5;
+    
+    --clr-white: #1a1a1a;
+    --clr-gray-100: #2a2a2a;
+    --clr-gray-200: #3d3d3d;
+    --clr-gray-300: #666666;
+    --clr-gray-400: #888888;
+    
+    --theme-bg-start: #faf6ef;
+    --theme-bg-end: #f0ece4;
+    
+    --theme-radial: rgba(255, 210, 150, .25);
+    
+    /* Override glass for light mode */
+    --liquid-bg: linear-gradient(135deg, rgba(255,255,255,.7), rgba(255,255,255,.4));
+    --liquid-border: 1px solid rgba(0,0,0,.08);
+    --liquid-shadow: 0 8px 40px rgba(0,0,0,.06), inset 0 1px 1px rgba(255,255,255,.9);
+    --liquid-hover: linear-gradient(135deg, rgba(255,255,255,.85), rgba(255,255,255,.6));
 }
 
 
 /* ==========================================
-   DAY THEME
+   DAY THEME (Clean, Cool Light)
 ========================================== */
 
 body.day-theme {
-
-    --bg-primary: #ffffff;
-
-    --clr-white: #0f0f0f;
-    --clr-gray-100: #1a1a1a;
-    --clr-gray-200: #2d2d2d;
-    --clr-gray-300: #555555;
-    --clr-gray-400: #777777;
-
-    --theme-bg-start: #ffffff;
-    --theme-bg-end: #f0f0f0;
-
-    --theme-radial:
-        rgba(255, 255, 255, .4);
-
+    --bg-primary: #f5f5f7;
+    
+    --clr-white: #1a1a1a;
+    --clr-gray-100: #2a2a2a;
+    --clr-gray-200: #3d3d3d;
+    --clr-gray-300: #666666;
+    --clr-gray-400: #888888;
+    
+    --theme-bg-start: #f0f0f2;
+    --theme-bg-end: #e8e8ea;
+    
+    --theme-radial: rgba(200, 210, 230, .3);
+    
+    /* Override glass for light mode */
+    --liquid-bg: linear-gradient(135deg, rgba(255,255,255,.7), rgba(255,255,255,.35));
+    --liquid-border: 1px solid rgba(0,0,0,.06);
+    --liquid-shadow: 0 8px 40px rgba(0,0,0,.05), inset 0 1px 1px rgba(255,255,255,.95);
+    --liquid-hover: linear-gradient(135deg, rgba(255,255,255,.85), rgba(255,255,255,.5));
 }
 
 
