@@ -509,3 +509,56 @@ body.morning-theme .forecast-header h3,
 body.day-theme .forecast-header h3 {
     color: rgba(0,0,0,.35);
 }
+
+/* ==========================================
+   LIGHT MODE OVERRIDES
+   ========================================== */
+
+/* ---------- Temperature ---------- */
+body.morning-theme .temperature,
+body.day-theme .temperature {
+    background: linear-gradient(to bottom, #1a1a1a 0%, #444444 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ---------- Quote ---------- */
+body.morning-theme .quote,
+body.day-theme .quote {
+    color: rgba(0,0,0,.85);
+}
+
+/* ---------- Greeting ---------- */
+body.morning-theme .greeting,
+body.day-theme .greeting {
+    color: rgba(0,0,0,.45);
+}
+
+/* ---------- Date / Time ---------- */
+body.morning-theme .date-time,
+body.day-theme .date-time {
+    color: rgba(0,0,0,.55);
+}
+
+/* ---------- Forecast header and day labels ---------- */
+body.morning-theme .forecast-header h3,
+body.day-theme .forecast-header h3 {
+    color: rgba(0,0,0,.35);
+}
+body.morning-theme .forecast-day,
+body.day-theme .forecast-day {
+    color: rgba(0,0,0,.5);
+}
+
+/* ---------- Settings panel header ---------- */
+body.morning-theme .settings-header h3,
+body.day-theme .settings-header h3 {
+    color: rgba(0,0,0,.85);
+}
+
+/* ---------- Option item border ---------- */
+body.morning-theme .option-item,
+body.day-theme .option-item {
+    border-bottom-color: rgba(0,0,0,.06);
+}

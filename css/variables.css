@@ -3,16 +3,12 @@
    ========================================== */
 
 :root {
-
     /* ==========================================
        COLORS
        ========================================== */
-
-    /* Primary Colors */
     --clr-white: #ffffff;
     --clr-black: #050505;
 
-    /* Grays */
     --clr-gray-100: #f5f5f5;
     --clr-gray-200: #e5e5e5;
     --clr-gray-300: #bdbdbd;
@@ -23,81 +19,38 @@
     --clr-gray-800: #1a1a1a;
     --clr-gray-900: #0f0f0f;
 
-    /* Accent Colors (Very Subtle) */
     --clr-accent-warm: rgba(255, 255, 255, 0.08);
     --clr-accent-cool: rgba(255, 255, 255, 0.04);
-
-
 
     /* ==========================================
        BACKGROUNDS
        ========================================== */
-
     --bg-primary: #030303;
     --bg-secondary: rgba(255, 255, 255, 0.04);
     --bg-glass: rgba(255, 255, 255, 0.06);
     --bg-glass-hover: rgba(255, 255, 255, 0.10);
 
-
-
-/* ==========================================
-   LIQUID GLASS SYSTEM
-========================================== */
-
---liquid-bg:
-    linear-gradient(
-        135deg,
-        rgba(255,255,255,.14),
-        rgba(255,255,255,.04)
-    );
-
---liquid-blur:
-    blur(40px) saturate(180%);
-
---liquid-border:
-    1px solid rgba(255,255,255,.12);
-
---liquid-shadow:
-    0 8px 40px rgba(0,0,0,.25),
-    inset 0 1px 1px rgba(255,255,255,.18),
-    inset 0 -1px 1px rgba(255,255,255,.04);
-
---liquid-hover:
-    linear-gradient(
-        135deg,
-        rgba(255,255,255,.18),
-        rgba(255,255,255,.08)
-    );
-
-
+    /* ==========================================
+       LIQUID GLASS SYSTEM
+       ========================================== */
+    --liquid-bg: linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.04));
+    --liquid-blur: blur(40px) saturate(180%);
+    --liquid-border: 1px solid rgba(255,255,255,.12);
+    --liquid-shadow: 0 8px 40px rgba(0,0,0,.25), inset 0 1px 1px rgba(255,255,255,.18), inset 0 -1px 1px rgba(255,255,255,.04);
+    --liquid-hover: linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.08));
 
     /* ==========================================
        TYPOGRAPHY
        ========================================== */
-
     --font-primary: 'Satoshi', sans-serif;
-
-    /* Font Sizes */
-
     --fs-temp: clamp(6rem, 12vw, 10rem);
-
     --fs-condition: clamp(1.5rem, 3vw, 2.3rem);
-
     --fs-city: clamp(1.2rem, 2vw, 1.5rem);
-
     --fs-date: clamp(.95rem, 1.5vw, 1.1rem);
-
     --fs-stat: clamp(1.3rem, 2vw, 1.8rem);
-
     --fs-body: 1rem;
-
     --fs-small: .9rem;
-
     --fs-logo: 1.25rem;
-
-
-
-    /* Font Weights */
 
     --fw-light: 300;
     --fw-regular: 400;
@@ -105,12 +58,9 @@
     --fw-bold: 700;
     --fw-black: 900;
 
-
-
     /* ==========================================
        SPACING
        ========================================== */
-
     --space-xs: .5rem;
     --space-sm: .75rem;
     --space-md: 1rem;
@@ -120,48 +70,35 @@
     --space-3xl: 4rem;
     --space-4xl: 6rem;
 
-
-
     /* ==========================================
        BORDER RADIUS
        ========================================== */
-
     --radius-sm: 12px;
     --radius-md: 18px;
     --radius-lg: 24px;
     --radius-xl: 32px;
     --radius-pill: 999px;
 
-
-
     /* ==========================================
        TRANSITIONS
        ========================================== */
-
     --transition-fast: .2s ease;
     --transition-normal: .35s ease;
     --transition-slow: .6s ease;
 
-
-
     /* ==========================================
        Z INDEX
        ========================================== */
-
     --z-background: -1;
     --z-base: 1;
     --z-header: 100;
     --z-sidebar: 500;
     --z-modal: 1000;
 
-
-
     /* ==========================================
        LAYOUT
        ========================================== */
-
     --container-width: 1200px;
     --sidebar-width: 380px;
     --dashboard-offset: -30px;
-
 }

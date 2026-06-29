@@ -1,7 +1,11 @@
 import { formatTemperature } from '../utils/temperatureUtils.js';
 import { getSetting } from '../services/storageService.js';
 import { updateAmbientSound } from './ambientSound.js';
-
+import { startSnow, stopSnow } from '../effects/snow.js';
+import { startRain, stopRain } from '../effects/rain.js';
+import { startClouds, stopClouds } from '../effects/clouds.js';
+import { startLightning, stopLightning } from '../effects/lightning.js';
+import { startFog, stopFog } from '../effects/fog.js';
 
 export function updateWeatherUI(weather) {
 
@@ -32,6 +36,46 @@ export function updateWeatherUI(weather) {
             weather.weather_code
         );
 
+        // Snow effect
+        if (weather.weather_code === 71) {
+            startSnow();
+        } else {
+            stopSnow();
+        }
+
+        // Rain effect
+        const rainyCodes = [51, 53, 55, 61, 63, 65, 80];
+        if (rainyCodes.includes(weather.weather_code)) {
+            startRain();
+        } else {
+            stopRain();
+        }
+
+        // Cloud effect – show for cloudy, rainy, stormy, foggy
+        const cloudCodes = [1, 2, 3, 45, 48, 51, 53, 55, 61, 63, 65, 80, 95];
+        const isCloudy = cloudCodes.includes(weather.weather_code);
+
+        if (isCloudy) {
+            startClouds();
+        } else {
+            stopClouds();
+        }
+
+        // Lightning effect – only for stormy weather (code 95)
+        if (weather.weather_code === 95) {
+            startLightning();
+        } else {
+            stopLightning();
+        }
+
+        // Fog effect – for foggy weather (codes 45, 48)
+        const fogCodes = [45, 48];
+        if (fogCodes.includes(weather.weather_code)) {
+            startFog();
+        } else {
+            stopFog();
+        }
+
         // ... after you've set the weather classes ...
         updateAmbientSound(weather.weather_code);
 
@@ -42,6 +86,7 @@ export function updateWeatherUI(weather) {
 
     document.getElementById('weatherIcon').className =
         weatherInfo.icon;
+
 
 
 

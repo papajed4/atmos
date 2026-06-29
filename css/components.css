@@ -722,3 +722,113 @@ body.day-theme .favorite-item-active {
     background: rgba(0,0,0,.05);
     border-color: rgba(0,0,0,.15);
 }
+
+
+/* ==========================================
+   LIGHT MODE OVERRIDES
+   ========================================== */
+
+/* ---------- Checkbox / radio accent ---------- */
+body.morning-theme input[type="checkbox"],
+body.morning-theme input[type="radio"],
+body.day-theme input[type="checkbox"],
+body.day-theme input[type="radio"] {
+    accent-color: #222;
+}
+
+/* ---------- Select dropdown ---------- */
+body.morning-theme select,
+body.day-theme select {
+    color: #1a1a1a;
+    background: var(--liquid-bg);
+}
+body.morning-theme select option,
+body.day-theme select option {
+    background: #f5f5f5;
+    color: #1a1a1a;
+}
+
+/* ---------- Option item text ---------- */
+body.morning-theme .option-item span,
+body.day-theme .option-item span {
+    color: rgba(0,0,0,.7);
+}
+
+/* ---------- Settings group heading ---------- */
+body.morning-theme .settings-group h4,
+body.day-theme .settings-group h4 {
+    color: rgba(0,0,0,.8);
+}
+
+/* ---------- Close settings button ---------- */
+body.morning-theme .close-settings,
+body.day-theme .close-settings {
+    color: #1a1a1a;
+}
+
+/* ---------- Add city button ---------- */
+body.morning-theme .add-city-btn,
+body.day-theme .add-city-btn {
+    color: #1a1a1a;
+}
+
+/* ---------- City input ---------- */
+body.morning-theme .city-input,
+body.day-theme .city-input {
+    color: #1a1a1a;
+}
+body.morning-theme .city-input::placeholder,
+body.day-theme .city-input::placeholder {
+    color: rgba(0,0,0,.4);
+}
+
+/* ---------- Volume label ---------- */
+body.morning-theme #volumeLabel,
+body.day-theme #volumeLabel {
+    color: rgba(0,0,0,.6);
+}
+
+/* ---------- Favorites empty message ---------- */
+body.morning-theme .favorites-empty,
+body.day-theme .favorites-empty {
+    color: rgba(0,0,0,.5);
+}
+
+/* ---------- Favorite item name ---------- */
+body.morning-theme .favorite-name,
+body.day-theme .favorite-name {
+    color: rgba(0,0,0,.85);
+}
+
+/* ---------- Favorite action buttons ---------- */
+body.morning-theme .favorite-actions button,
+body.day-theme .favorite-actions button {
+    color: rgba(0,0,0,.4);
+}
+body.morning-theme .favorite-actions button:hover,
+body.day-theme .favorite-actions button:hover {
+    color: rgba(0,0,0,.8);
+}
+
+/* ---------- Favorite item border ---------- */
+body.morning-theme .favorite-item,
+body.day-theme .favorite-item {
+    border-color: rgba(0,0,0,.06);
+}
+
+/* ---------- Favorite item active state ---------- */
+body.morning-theme .favorite-item-active,
+body.day-theme .favorite-item-active {
+    background: rgba(0,0,0,.05);
+    border-color: rgba(0,0,0,.15);
+}
+
+/* ---------- Scrollbar thumb ---------- */
+body.morning-theme .settings-panel::-webkit-scrollbar-thumb,
+body.day-theme .settings-panel::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.12);
+}
+body.morning-theme .settings-panel::-webkit-scrollbar-thumb:hover,
+body.day-theme .settings-panel::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,.2);
+}

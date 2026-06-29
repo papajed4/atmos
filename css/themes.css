@@ -3,35 +3,31 @@
 ========================================== */
 
 body {
-
     --theme-bg-start: #0d0d0d;
     --theme-bg-end: #030303;
-
-    --theme-radial:
-        rgba(255, 255, 255, .08);
-
+    --theme-radial: rgba(255, 255, 255, .08);
 }
 
 
 /* ==========================================
-   MORNING THEME (Warm, Soft Light)
+   MORNING THEME – warm, soft light
 ========================================== */
 
 body.morning-theme {
+    /* Background colours */
     --bg-primary: #faf8f5;
-    
+    --theme-bg-start: #faf6ef;
+    --theme-bg-end: #f0ece4;
+    --theme-radial: rgba(255, 210, 150, .25);
+
+    /* Text colours (dark) */
     --clr-white: #1a1a1a;
     --clr-gray-100: #2a2a2a;
     --clr-gray-200: #3d3d3d;
     --clr-gray-300: #666666;
     --clr-gray-400: #888888;
-    
-    --theme-bg-start: #faf6ef;
-    --theme-bg-end: #f0ece4;
-    
-    --theme-radial: rgba(255, 210, 150, .25);
-    
-    /* Override glass for light mode */
+
+    /* Glass system – light mode */
     --liquid-bg: linear-gradient(135deg, rgba(255,255,255,.7), rgba(255,255,255,.4));
     --liquid-border: 1px solid rgba(0,0,0,.08);
     --liquid-shadow: 0 8px 40px rgba(0,0,0,.06), inset 0 1px 1px rgba(255,255,255,.9);
@@ -40,25 +36,22 @@ body.morning-theme {
 
 
 /* ==========================================
-   DAY THEME (Clean, Cool Light)
+   DAY THEME – clean, cool light
 ========================================== */
 
 body.day-theme {
     --bg-primary: #f5f5f7;
-    
+    --theme-bg-start: #f0f0f2;
+    --theme-bg-end: #e8e8ea;
+    --theme-radial: rgba(200, 210, 230, .3);
+
     --clr-white: #1a1a1a;
     --clr-gray-100: #2a2a2a;
     --clr-gray-200: #3d3d3d;
     --clr-gray-300: #666666;
     --clr-gray-400: #888888;
-    
-    --theme-bg-start: #f0f0f2;
-    --theme-bg-end: #e8e8ea;
-    
-    --theme-radial: rgba(200, 210, 230, .3);
-    
-    /* Override glass for light mode */
-    --liquid-bg: linear-gradient(135deg, rgba(255,255,255,.7), rgba(255,255,255,.35));
+
+    --liquid-bg: linear-gradient(135deg, rgba(255,255,255,.75), rgba(255,255,255,.35));
     --liquid-border: 1px solid rgba(0,0,0,.06);
     --liquid-shadow: 0 8px 40px rgba(0,0,0,.05), inset 0 1px 1px rgba(255,255,255,.95);
     --liquid-hover: linear-gradient(135deg, rgba(255,255,255,.85), rgba(255,255,255,.5));
@@ -70,13 +63,9 @@ body.day-theme {
 ========================================== */
 
 body.evening-theme {
-
     --theme-bg-start: #22180f;
     --theme-bg-end: #0f0b09;
-
-    --theme-radial:
-        rgba(255, 170, 90, .18);
-
+    --theme-radial: rgba(255, 170, 90, .18);
 }
 
 
@@ -85,61 +74,22 @@ body.evening-theme {
 ========================================== */
 
 body.night-theme {
-
     --theme-bg-start: #0b0b0b;
     --theme-bg-end: #030303;
-
-    --theme-radial:
-        rgba(255, 255, 255, .08);
-
+    --theme-radial: rgba(255, 255, 255, .08);
 }
 
 
 /* ==========================================
-   WEATHER STATES
+   WEATHER STATE OVERRIDES
 ========================================== */
 
-body.sunny {
-
-    --theme-radial:
-        rgba(255, 195, 70, .35);
-
-}
-
-body.cloudy {
-
-    --theme-radial:
-        rgba(180, 180, 180, .18);
-
-}
-
-body.rainy {
-
-    --theme-radial:
-        rgba(90, 140, 255, .30);
-
-}
-
-body.stormy {
-
-    --theme-radial:
-        rgba(120, 120, 120, .12);
-
-}
-
-body.foggy {
-
-    --theme-radial:
-        rgba(220, 220, 220, .12);
-
-}
-
-body.snowy {
-
-    --theme-radial:
-        rgba(255, 255, 255, .28);
-
-}
+body.sunny   { --theme-radial: rgba(255, 195, 70, .35); }
+body.cloudy  { --theme-radial: rgba(180, 180, 180, .18); }
+body.rainy   { --theme-radial: rgba(90, 140, 255, .30); }
+body.stormy  { --theme-radial: rgba(120, 120, 120, .12); }
+body.foggy   { --theme-radial: rgba(220, 220, 220, .12); }
+body.snowy   { --theme-radial: rgba(255, 255, 255, .28); }
 
 
 /* ==========================================
@@ -147,36 +97,49 @@ body.snowy {
 ========================================== */
 
 .background-layer {
-
     background:
         radial-gradient(circle at top center,
             var(--theme-radial),
             transparent 45%),
-
         linear-gradient(180deg,
             var(--theme-bg-start) 0%,
             var(--theme-bg-end) 100%);
-
 }
 
 
 /* ==========================================
-   LIGHT MODE IMPROVEMENTS
+   LIGHT MODE GLASS ELEMENTS – ensure visibility
 ========================================== */
 
+body.morning-theme .icon-btn,
+body.morning-theme .stat-card,
+body.morning-theme .settings-group,
+body.morning-theme .settings-panel,
 body.day-theme .icon-btn,
 body.day-theme .stat-card,
 body.day-theme .settings-group,
-body.morning-theme .icon-btn,
-body.morning-theme .stat-card,
-body.morning-theme .settings-group {
+body.day-theme .settings-panel {
+    border: var(--liquid-border);
+    box-shadow: var(--liquid-shadow);
+    background: var(--liquid-bg);
+    backdrop-filter: var(--liquid-blur);
+    -webkit-backdrop-filter: var(--liquid-blur);
+}
 
-    border: 1px solid rgba(0, 0, 0, .06);
 
-    box-shadow:
-        0 10px 40px rgba(0, 0, 0, .06),
-        inset 0 1px 1px rgba(255, 255, 255, .7);
+/* ==========================================
+   WEATHER EFFECTS (rain, fog, lightning)
+========================================== */
 
+body.foggy .fog {
+    opacity: .5;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, .15) 0%, transparent 70%);
+    filter: blur(100px);
+    animation: fogMove 12s ease-in-out infinite;
+}
+body.stormy .lightning {
+    background: rgba(255, 255, 255, .8);
+    animation: lightningFlash 5s infinite;
 }
 
 
@@ -193,98 +156,22 @@ body,
 .weather-condition,
 .city-name,
 .date-time {
-
-    transition:
-        background .8s ease,
-        color .8s ease,
-        border .8s ease,
-        box-shadow .8s ease;
+    transition: background .8s ease, color .8s ease, border .8s ease, box-shadow .8s ease;
 }
 
-
-body.rainy .rain {
-
-    opacity: .06;
-
-    background-image:
-        repeating-linear-gradient(
-            -15deg,
-            transparent 0px,
-            transparent 60px,
-            rgba(255,255,255,.35) 61px,
-            rgba(255,255,255,.35) 63px
-        );
-
-    background-size: 250px 250px;
-
-    animation: rainFall 1.4s linear infinite;
-}
-
-body.foggy .fog {
-
-    opacity: .5;
-
-    background:
-        radial-gradient(circle at center,
-            rgba(255, 255, 255, .15) 0%,
-            transparent 70%);
-
-    filter: blur(100px);
-
-    animation:
-        fogMove 12s ease-in-out infinite;
-}
-
-body.stormy .lightning {
-
-    background:
-        rgba(255, 255, 255, .8);
-
-    animation:
-        lightningFlash 5s infinite;
-}
-
-
-body.sunny {
-
-    --theme-radial:
-        rgba(255, 190, 70, .45);
-
-}
-
-body.sunny .background-layer {
-    animation:
-        backgroundBreath 15s ease-in-out infinite;
-}
-
-body.stormy {
-
-    --theme-bg-start: #060606;
-    --theme-bg-end: #000000;
-
-}
 
 /* ==========================================
    DYNAMIC BACKGROUND OFF
 ========================================== */
 
 body.dynamic-bg-disabled {
-
-    --theme-radial:
-        rgba(255,255,255,.08);
-
+    --theme-radial: rgba(255,255,255,.08);
 }
-
 body.dynamic-bg-disabled .rain,
 body.dynamic-bg-disabled .fog,
 body.dynamic-bg-disabled .lightning {
-
     opacity: 0 !important;
-
 }
-
 body.dynamic-bg-disabled .background-layer {
-
     animation: none;
-
 }
