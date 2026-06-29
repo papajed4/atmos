@@ -1,0 +1,502 @@
+/* ==========================================
+   SETTINGS PANEL
+========================================== */
+
+.settings-panel {
+    position: fixed;
+    top: 1rem;
+    right: -110%;
+
+    width: min(100%, var(--sidebar-width));
+    height: calc(100vh - 2rem);
+
+    padding: 2rem;
+
+    background: var(--liquid-bg);
+
+    backdrop-filter: var(--liquid-blur);
+    -webkit-backdrop-filter: var(--liquid-blur);
+
+    border: var(--liquid-border);
+
+    border-radius: 36px 0 0 36px;
+
+    box-shadow: var(--liquid-shadow);
+
+    z-index: 100;
+
+    overflow-y: auto;
+
+    transition: right .6s cubic-bezier(.22,1,.36,1);
+}
+
+.settings-panel.active {
+
+    right: 1rem;
+
+    animation: panelPop .45s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+/* ==========================================
+   SETTINGS HEADER
+========================================== */
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 2.5rem;
+}
+
+.settings-header h3 {
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+    letter-spacing: -.03em;
+}
+
+.close-settings {
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    outline: none;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    color: var(--clr-white);
+
+    background: var(--liquid-bg);
+
+    backdrop-filter: var(--liquid-blur);
+    -webkit-backdrop-filter: var(--liquid-blur);
+
+    border: var(--liquid-border);
+
+    box-shadow: var(--liquid-shadow);
+
+    transition: all var(--transition-normal);
+}
+
+.close-settings:hover {
+    transform: rotate(90deg) scale(1.05);
+    background: var(--liquid-hover);
+}
+
+.close-settings i {
+    font-size: 1.2rem;
+}
+
+
+/* ==========================================
+   SETTINGS CONTENT
+========================================== */
+
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+/* ==========================================
+   SETTINGS GROUP
+========================================== */
+
+.settings-group {
+    padding: 1.75rem;
+
+    background: var(--liquid-bg);
+
+    backdrop-filter: var(--liquid-blur);
+    -webkit-backdrop-filter: var(--liquid-blur);
+
+    border: var(--liquid-border);
+
+    border-radius: 32px;
+
+    box-shadow: var(--liquid-shadow);
+
+    transition: all var(--transition-normal);
+}
+
+.settings-group:hover {
+    transform: translateY(-3px);
+}
+
+.settings-group h4 {
+    margin-bottom: 1.5rem;
+
+    font-size: 1rem;
+    font-weight: var(--fw-bold);
+
+    color: var(--clr-gray-200);
+}
+
+
+/* ==========================================
+   OPTION ITEM
+========================================== */
+
+.option-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    padding: .85rem 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+
+.option-item:last-child {
+    border-bottom: none;
+}
+
+.option-item span {
+    color: var(--clr-gray-300);
+    font-size: .95rem;
+}
+
+
+/* ==========================================
+   FORM CONTROLS
+========================================== */
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
+
+    accent-color: #ffffff;
+
+    cursor: pointer;
+}
+
+select {
+    min-width: 130px;
+
+    padding: .8rem 1rem;
+
+    border: none;
+    outline: none;
+
+    border-radius: var(--radius-pill);
+
+    background: var(--liquid-bg);
+
+    backdrop-filter: var(--liquid-blur);
+    -webkit-backdrop-filter: var(--liquid-blur);
+
+    border: var(--liquid-border);
+
+    color: var(--clr-white);
+
+    font-family: inherit;
+    font-size: .9rem;
+
+    cursor: pointer;
+
+    transition: all var(--transition-normal);
+}
+
+select:hover {
+    transform: translateY(-2px);
+}
+
+select option {
+    background: #121212;
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   ADD CITY BUTTON
+========================================== */
+
+.add-city-btn {
+    width: 100%;
+
+    padding: 1rem;
+
+    border: none;
+    outline: none;
+
+    border-radius: var(--radius-pill);
+
+    background: var(--liquid-bg);
+
+    backdrop-filter: var(--liquid-blur);
+    -webkit-backdrop-filter: var(--liquid-blur);
+
+    border: var(--liquid-border);
+
+    box-shadow: var(--liquid-shadow);
+
+    color: var(--clr-white);
+
+    font-family: inherit;
+    font-size: .95rem;
+    font-weight: var(--fw-medium);
+
+    cursor: pointer;
+
+    transition: all var(--transition-normal);
+}
+
+.add-city-btn:hover {
+    transform: translateY(-3px);
+    background: var(--liquid-hover);
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.settings-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.settings-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.settings-panel::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,.12);
+    border-radius: 999px;
+}
+
+.settings-panel::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,.2);
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 576px) {
+
+    .settings-panel {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .settings-group {
+        padding: 1.25rem;
+    }
+
+}
+
+/* ==========================================
+   GLASS EFFECT OFF
+========================================== */
+
+body.glass-disabled .glass-card,
+body.glass-disabled .stat-card,
+body.glass-disabled .settings-panel,
+body.glass-disabled .settings-group,
+body.glass-disabled .icon-btn {
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    background:
+        rgba(20,20,20,.95);
+
+    border:
+        1px solid rgba(255,255,255,.05);
+
+    box-shadow: none;
+
+}
+
+body.glass-disabled .background-layer {
+
+    opacity: .5;
+
+}
+
+/* ==========================================
+   FORECAST
+========================================== */
+
+.forecast-section {
+
+    width: 100%;
+
+}
+
+.forecast-header {
+
+    margin-bottom: 1.5rem;
+
+}
+
+.forecast-header h3 {
+
+    font-size: .8rem;
+
+    font-weight: 600;
+
+    letter-spacing: .2em;
+
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,.45);
+
+}
+
+.forecast-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+
+}
+
+.forecast-item {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: .5rem 0;
+
+    opacity: .85;
+
+    transition: all .3s ease;
+
+}
+
+.forecast-item:hover {
+
+    opacity: 1;
+
+    transform: translateX(6px);
+
+}
+
+.forecast-day {
+
+    width: 70px;
+
+    color: rgba(255,255,255,.65);
+
+}
+
+.forecast-icon {
+
+    font-size: 1.1rem;
+
+}
+
+.forecast-temp {
+
+    font-weight: 600;
+
+}
+
+/* ==========================
+   LOADING SCREEN
+========================== */
+
+.loading-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: #000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin: 0 auto;
+
+    transition: opacity .8s ease,
+                visibility .8s ease;
+
+}
+
+.loading-screen.hide {
+
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+.loading-content {
+
+    text-align: center;
+
+}
+
+.loading-logo {
+
+    font-size: 3rem;
+
+    font-weight: 700;
+
+    margin-bottom: 1rem;
+}
+
+.loading-text {
+
+    opacity: .6;
+
+    margin-bottom: 2rem;
+}
+
+.loading-spinner {
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(255,255,255,.1);
+
+    border-top-color: #fff;
+
+    animation: spin 1s linear infinite;
+
+}
+
+.spinner-wrapper {
+
+    display: flex;
+
+    justify-content: center;
+
+    width: 100%;
+
+}
+
+@keyframes spin {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}

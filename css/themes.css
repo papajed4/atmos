@@ -1,0 +1,284 @@
+/* ==========================================
+   DEFAULT THEME (NIGHT)
+========================================== */
+
+body {
+
+    --theme-bg-start: #0d0d0d;
+    --theme-bg-end: #030303;
+
+    --theme-radial:
+        rgba(255, 255, 255, .08);
+
+}
+
+
+/* ==========================================
+   MORNING THEME
+========================================== */
+
+body.morning-theme {
+
+    --bg-primary: #f7f7f7;
+
+    --clr-white: #121212;
+    --clr-gray-100: #1a1a1a;
+    --clr-gray-200: #2a2a2a;
+    --clr-gray-300: #444444;
+    --clr-gray-400: #666666;
+
+    --theme-bg-start: #fffdf7;
+    --theme-bg-end: #f4f4f4;
+
+    --theme-radial:
+        rgba(255, 225, 170, .25);
+
+}
+
+
+/* ==========================================
+   DAY THEME
+========================================== */
+
+body.day-theme {
+
+    --bg-primary: #ffffff;
+
+    --clr-white: #0f0f0f;
+    --clr-gray-100: #1a1a1a;
+    --clr-gray-200: #2d2d2d;
+    --clr-gray-300: #555555;
+    --clr-gray-400: #777777;
+
+    --theme-bg-start: #ffffff;
+    --theme-bg-end: #f0f0f0;
+
+    --theme-radial:
+        rgba(255, 255, 255, .4);
+
+}
+
+
+/* ==========================================
+   EVENING THEME
+========================================== */
+
+body.evening-theme {
+
+    --theme-bg-start: #22180f;
+    --theme-bg-end: #0f0b09;
+
+    --theme-radial:
+        rgba(255, 170, 90, .18);
+
+}
+
+
+/* ==========================================
+   NIGHT THEME
+========================================== */
+
+body.night-theme {
+
+    --theme-bg-start: #0b0b0b;
+    --theme-bg-end: #030303;
+
+    --theme-radial:
+        rgba(255, 255, 255, .08);
+
+}
+
+
+/* ==========================================
+   WEATHER STATES
+========================================== */
+
+body.sunny {
+
+    --theme-radial:
+        rgba(255, 195, 70, .35);
+
+}
+
+body.cloudy {
+
+    --theme-radial:
+        rgba(180, 180, 180, .18);
+
+}
+
+body.rainy {
+
+    --theme-radial:
+        rgba(90, 140, 255, .30);
+
+}
+
+body.stormy {
+
+    --theme-radial:
+        rgba(120, 120, 120, .12);
+
+}
+
+body.foggy {
+
+    --theme-radial:
+        rgba(220, 220, 220, .12);
+
+}
+
+body.snowy {
+
+    --theme-radial:
+        rgba(255, 255, 255, .28);
+
+}
+
+
+/* ==========================================
+   DYNAMIC BACKGROUND
+========================================== */
+
+.background-layer {
+
+    background:
+        radial-gradient(circle at top center,
+            var(--theme-radial),
+            transparent 45%),
+
+        linear-gradient(180deg,
+            var(--theme-bg-start) 0%,
+            var(--theme-bg-end) 100%);
+
+}
+
+
+/* ==========================================
+   LIGHT MODE IMPROVEMENTS
+========================================== */
+
+body.day-theme .icon-btn,
+body.day-theme .stat-card,
+body.day-theme .settings-group,
+body.morning-theme .icon-btn,
+body.morning-theme .stat-card,
+body.morning-theme .settings-group {
+
+    border: 1px solid rgba(0, 0, 0, .06);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, .06),
+        inset 0 1px 1px rgba(255, 255, 255, .7);
+
+}
+
+
+/* ==========================================
+   THEME TRANSITIONS
+========================================== */
+
+body,
+.background-layer,
+.icon-btn,
+.stat-card,
+.settings-group,
+.temperature,
+.weather-condition,
+.city-name,
+.date-time {
+
+    transition:
+        background .8s ease,
+        color .8s ease,
+        border .8s ease,
+        box-shadow .8s ease;
+}
+
+
+body.rainy .rain {
+
+    opacity: .06;
+
+    background-image:
+        repeating-linear-gradient(
+            -15deg,
+            transparent 0px,
+            transparent 60px,
+            rgba(255,255,255,.35) 61px,
+            rgba(255,255,255,.35) 63px
+        );
+
+    background-size: 250px 250px;
+
+    animation: rainFall 1.4s linear infinite;
+}
+
+body.foggy .fog {
+
+    opacity: .5;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(255, 255, 255, .15) 0%,
+            transparent 70%);
+
+    filter: blur(100px);
+
+    animation:
+        fogMove 12s ease-in-out infinite;
+}
+
+body.stormy .lightning {
+
+    background:
+        rgba(255, 255, 255, .8);
+
+    animation:
+        lightningFlash 5s infinite;
+}
+
+
+body.sunny {
+
+    --theme-radial:
+        rgba(255, 190, 70, .45);
+
+}
+
+body.sunny .background-layer {
+    animation:
+        backgroundBreath 15s ease-in-out infinite;
+}
+
+body.stormy {
+
+    --theme-bg-start: #060606;
+    --theme-bg-end: #000000;
+
+}
+
+/* ==========================================
+   DYNAMIC BACKGROUND OFF
+========================================== */
+
+body.dynamic-bg-disabled {
+
+    --theme-radial:
+        rgba(255,255,255,.08);
+
+}
+
+body.dynamic-bg-disabled .rain,
+body.dynamic-bg-disabled .fog,
+body.dynamic-bg-disabled .lightning {
+
+    opacity: 0 !important;
+
+}
+
+body.dynamic-bg-disabled .background-layer {
+
+    animation: none;
+
+}
