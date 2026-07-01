@@ -5,44 +5,22 @@ import {
 
 
 export function initializeTheme() {
-
-    const savedTheme =
-        getSetting('theme') || 'auto';
+    // Default to 'dark' for new visitors, or use saved preference
+    const savedTheme = getSetting('theme') || 'dark';
 
     applyTheme(savedTheme);
 
-    const radios =
-        document.querySelectorAll(
-            'input[name="theme"]'
-        );
-
+    const radios = document.querySelectorAll('input[name="theme"]');
     radios.forEach(radio => {
-
         if (radio.value === savedTheme) {
             radio.checked = true;
         }
-
-        radio.addEventListener(
-            'change',
-            () => {
-
-                applyTheme(
-                    radio.value
-                );
-
-                saveSetting(
-                    'theme',
-                    radio.value
-                );
-
-            }
-        );
-
+        radio.addEventListener('change', () => {
+            applyTheme(radio.value);
+            saveSetting('theme', radio.value);
+        });
     });
-
 }
-
-
 function applyTheme(theme) {
 
     document.body.classList.remove(
